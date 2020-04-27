@@ -40,8 +40,19 @@ public class CustomerDAOImpl implements CustomerDAO {
 		Session session=sessionFactory.getCurrentSession();
 		
 		//save the customer
-		session.save(theCustomer);
+		session.saveOrUpdate(theCustomer);
 		
+	}
+
+	@Override
+	public Customer getCustomer(int theId) {
+		
+		Session session=sessionFactory.getCurrentSession();
+		
+		//get data from db
+		Customer theCustomer=session.get(Customer.class, theId);
+		
+		return theCustomer;
 	}
 
 }
