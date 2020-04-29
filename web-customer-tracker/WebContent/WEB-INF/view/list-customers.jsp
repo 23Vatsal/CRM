@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 
@@ -19,7 +20,7 @@
 
 	<div id="wrapper">
 		<div id="header">
-			<h2>CRM - Customer Relationship Manager</h2>
+			<h2><a href="${pageContext.request.contextPath}/customer/list">CRM - Customer Relationship Manager</a></h2>
 		</div>
 	</div>
 	
@@ -31,6 +32,13 @@
 			   onclick="window.location.href='showFormForAdd'; return false;"
 			   class="add-button"
 			/>
+			
+			<!--  add a search box -->
+            <form:form action="search" method="POST">
+                Search customer: <input type="text" name="theSearchName" />
+                
+                <input type="submit" value="Search" class="add-button" />
+            </form:form>
 		
 			<!--  add our html table here -->
 		

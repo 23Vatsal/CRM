@@ -48,4 +48,11 @@ public class CustomerServiceImpl implements CustomerService {
 		
 	}
 
+	@Override
+	@Transactional
+	public List<Customer> doSearch(String theSearchName) {
+		// TODO Auto-generated method stub
+		return customerDAO.doSearch(theSearchName);
+	}
+
 }
